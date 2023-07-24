@@ -1,0 +1,40 @@
+﻿@page "/signin"
+@using server.Shared.Model;
+
+<div class="signin-form-wrapper">
+	<EditForm Model="@user">
+		<DataAnnotationsValidator />
+		<ValidationSummary />
+		<div class="Register-form-group">
+			<label for="Input-Email" style="flex-shrink:0; color:black; margin-bottom:3px; ">이메일</label>
+			<div class="col-sm-10">
+				<InputText id="Input-Email" placeholder="Email" type="email" @bind-Value="user.Email"
+						   style="width:150%; border:1px solid black;  border-radius: 3px;
+					line-height: 35px;
+					font-size: 12px;
+					padding-left: 10px;
+					padding-right: 10px;
+					margin-bottom:5px" />
+				<ValidationMessage For="@(()=> user.Email)" />
+			</div>
+		</div>
+
+		<div class="Register-form-group">
+			<label for="Input-Password" style="flex-shrink:0; color:black; margin-bottom:3px;">비밀번호</label>
+			<div class="col-sm-10">
+				<InputText id="Input-Password" placeholder="password" type="password" @bind-Value="user.Password"
+						   style="width:150%; border:1px solid black;  border-radius: 3px;
+					line-height: 35px;
+					font-size: 12px;
+					padding-left: 10px;
+					padding-right: 10px;" />
+				<ValidationMessage For="@(()=> user.Password)" />
+			</div>
+		</div>
+	</EditForm>
+
+</div>
+@code {
+
+	
+}

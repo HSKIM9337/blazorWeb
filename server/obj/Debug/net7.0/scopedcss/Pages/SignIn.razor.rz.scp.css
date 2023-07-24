@@ -1,0 +1,44 @@
+﻿.*[b-759o9dozq2] {
+    font-family: 'Orbit', sans-serif;
+}
+
+.signin-form-wrapper[b-759o9dozq2] {
+   display : flex;
+   justify-content : center;
+   min-width:300px;
+}
+
+
+.signin-form[b-759o9dozq2] {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group[b-759o9dozq2] {
+    margin-bottom: 10px;
+}
+
+label[b-759o9dozq2] {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"][b-759o9dozq2],
+input[type="password"][b-759o9dozq2] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[b-759o9dozq2] {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

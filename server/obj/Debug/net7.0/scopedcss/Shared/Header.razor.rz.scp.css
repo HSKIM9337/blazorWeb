@@ -1,0 +1,101 @@
+.*[b-8lif190cle] {
+    font-family: 'Orbit', sans-serif;
+}
+
+header[b-8lif190cle] {
+    background-image: radial-gradient(759px at 14% 22.3%, rgb(10, 64, 88) 0%, rgb(15, 164, 102) 90%);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 7vh;
+}
+
+nav ul[b-8lif190cle] {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li[b-8lif190cle] {
+    margin-right: 20px;
+}
+
+    nav li a[b-8lif190cle] {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    nav li:hover[b-8lif190cle] {
+        background-color : grey;
+        border-radius:4px;
+    }
+
+    nav li:active[b-8lif190cle] {
+        background-color: #D09AFF;
+        text-decoration:underline;
+        border-radius: 4px;
+        color: #8B00FF;
+    }
+   
+
+.menu-trigger[b-8lif190cle] {
+    align-items: center;
+    margin-right: 70px;
+    margin-bottom: 50px;
+}
+
+    .menu-trigger[b-8lif190cle],
+    .menu-trigger span[b-8lif190cle] {
+        display: inline-block;
+        transition: all .4s;
+        box-sizing: border-box;
+    }
+
+
+@media (max-width: 768px) {
+    /* Apply styles for screens with a maximum width of 768px */
+    .menu-trigger[b-8lif190cle] {
+        position: relative;
+        width: 2vw;
+        height: 2vh;
+    }
+
+        .menu-trigger span[b-8lif190cle] {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #fff;
+            border-radius: 4px;
+        }
+
+            .menu-trigger span:nth-of-type(1)[b-8lif190cle] {
+                top: 0;
+            }
+
+            .menu-trigger span:nth-of-type(2)[b-8lif190cle] {
+                top: 20px;
+            }
+
+            .menu-trigger span:nth-of-type(3)[b-8lif190cle] {
+                bottom: 0;
+            }
+
+        .menu-trigger.active-2 span:nth-of-type(1)[b-8lif190cle] {
+            -webkit-transform: translateY(20px) rotate(-315deg);
+            transform: translateY(20px) rotate(-315deg);
+        }
+
+        .menu-trigger.active-2 span:nth-of-type(2)[b-8lif190cle] {
+            opacity: 0;
+        }
+
+        .menu-trigger.active-2 span:nth-of-type(3)[b-8lif190cle] {
+            -webkit-transform: translateY(-20px) rotate(315deg);
+            transform: translateY(-20px) rotate(315deg);
+        }
+}
