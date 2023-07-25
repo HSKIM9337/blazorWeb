@@ -1,4 +1,4 @@
-﻿using server.Shared.Model;
+﻿using server.DB.Model;
 
 namespace server.Pages
 {

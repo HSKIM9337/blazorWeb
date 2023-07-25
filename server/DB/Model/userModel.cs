@@ -1,7 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
+using System.ComponentModel.DataAnnotations;
+using System.Reflection.Metadata;
 
-namespace server.Shared.Model
+namespace server.DB.Model
 {
+
     public class userModel
     {
         [Required(ErrorMessage = "Check your Email")]

@@ -1,4 +1,6 @@
-﻿namespace server.Pages
+﻿using Microsoft.JSInterop;
+
+namespace server.Pages
 {
 	public partial class Board
 	{
@@ -14,5 +16,10 @@
 			_headerTextUnderLined = true;
 
         }
+		private async Task OpenNewPage()
+		{
+			string url = "/boardwrite"; 
+			await JSRuntime.InvokeVoidAsync("window.open", url, "_blank");
+		}
 	}
 }

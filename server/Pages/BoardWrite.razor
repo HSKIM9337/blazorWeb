@@ -1,0 +1,38 @@
+﻿@page "/boardwrite"
+@using server.DB;
+@using server.DB.Model;
+@inject IDBHelper _dbHelper
+
+
+
+<div class="container">
+    <form action="/board/new" method="post">
+        <input type="hidden" name="galleryName" id="galleryName" />
+        <input type="hidden" name="galleryId" id="galleryId" value=1 />
+
+        작성자 <input type="text" name="userName" @bind="BoardInfo.Email">
+        비밀번호 <input type="password" name="password">
+        <br>
+        <br>
+        이미지 파일들<input type="file" multiple="multiple" name="imageFiles">
+        <br>
+        <br>
+        <input type="text" name="title" placeholder="제목을 입력해주세요" @bind="BoardInfo.Title">
+        <br>
+        <br>
+        <textarea name="content" placeholder="할말할말." @bind="BoardInfo.Contents"></textarea>
+        
+        <br>
+         
+        <input type="submit" @onclick="InsertDB" />
+    </form>
+</div> <!-- /container -->
+
+@code {
+    
+    
+    public void InsertDB()
+    {
+        this._dbHelper.insertIntoBoardTable(DateTime.Now, BoardInfo.Title, BoardInfo.Contents, BoardInfo.Email);
+    }
+}

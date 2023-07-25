@@ -1,4 +1,5 @@
 ﻿@page "/board"
+@inject IJSRuntime JSRuntime
 
 <div class="board-wrapper">
 
@@ -14,11 +15,52 @@
 		</ul>
 
 	</div>
-	<div class="board-wrapper" style="display:block; justify-content:center;">
-		<hr style="color:dimgray; height:10px; width:100%; width:80%;" />
+	<div class="board-list" style="margin:0 auto; width:70%;">
+		<hr style="color:dimgray; height:5px;" />
+		<div class="container">
+			<table class="board-table">
+				<thead>
+					<tr>
+						<th scope="col" class="th-num">번호</th>
+						<th scope="col" class="th-title">제목</th>
+						<th scope="col" class="th-date">등록일</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>3</td>
+						<th>
+							<a href="#!">[공지사항] 개인정보 처리방침 변경안내처리방침</a>
+							<p>테스트</p>
+						</th>
+						<td>2017.07.13</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+		<div id="board-search">
+			<div class="container">
+				<div class="search-window">
+					<form action="">
+						<div class="search-wrap" style="display:flex; justify-content:flex-start;">
+							<label for="search" class="blind">공지사항 내용 검색</label>
+							<input id="search" type="search" name="" placeholder="검색어를 입력해주세요." value="">
+							<button type="submit" class="btn btn-dark">검색</button>
+							
+						</div>
+						<button class="btn-hover color-8" style="float:right;" @onclick="OpenNewPage">글 쓰기</button>
+					
+					</form>
+				</div>
+				
+			</div>
+		</div>
 	</div>
+
 </div>
 
 @code {
-
+	
 }
