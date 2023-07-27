@@ -1,1 +1,211 @@
-﻿
+﻿.wrap-container {
+    width:1320px;
+    margin:0 auto;
+}
+
+.container {
+    position: relative;
+    padding: 60px 0 120px 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+.title_h2 {
+    font-size: 64px;
+    line-height: 84px;
+    font-weight: 700;
+    letter-spacing: -1.6px;
+}
+
+.gray-txt-box {
+    width: calc(50% - 12px);
+    padding: 40px;
+    background-color: #f2f2f2;
+    border-radius: 32px;
+}
+
+.label {
+    
+    font-size: 16px;
+    font-weight: 700;
+    padding-bottom: 12px;
+}
+.label-req {
+    margin-bottom: 10px;
+}
+.label-Noreq {
+    margin-bottom: 10px;
+}
+    .label-req:after {
+        content: "";
+        display: inline-block;
+        margin-left: 1px;
+        margin-top: 8px;
+        width: 10px;
+        height: 10px;
+        vertical-align: top;
+        background: url(/images/ic_star.svg) center/100% no-repeat;
+    }
+.gray-txt-box-hyphen {
+    list-style : none;
+}
+.gray-txt-box-desc {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: normal;
+    letter-spacing: -0.4px;
+    color: #797979;
+    margin-bottom: 10px;
+}
+.gray-txt-box-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.board-input-box-wrap {
+    margin-top: 60px;
+}
+.board-input-tit {
+    font-size: 30px;
+    line-height: 42px;
+    letter-spacing: -0.75px;
+    font-weight: bold;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+  
+    .board-input-box-wrap .req {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: normal;
+        letter-spacing: -0.35px;
+        color: #797979;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+        .board-input-box-wrap .req::before {
+            content: "";
+            margin-right: 2px;
+            width: 10px;
+            height: 10px;
+            background: url(/images/ic_star.svg) center/100% no-repeat;
+            
+        }
+.input_list {
+    width: 100%;
+    border-bottom: 3px solid #e4e4e4;
+}
+    .input_list .input_box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+    }
+
+.inquiry-input-area {
+    max-width: 984px;
+    width: 100%;
+}
+
+.textarea {
+    max-width: 984px;
+    width: 100%;
+    height: 312px;
+    border: 1px solid #d9d9d9;
+    background-color: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 20px 20px 50px 20px;
+}
+    .textarea textarea {
+        font-size: 16px;
+        min-height: 242px;
+        width: 100%;
+        color: #000000;
+        border: none;
+        resize: none;
+    }
+.input_inner {
+    position : relative;
+    
+}
+    .input_inner input[type=text], .input_inner input[type=password], .input_inner input[type=search], .input_inner input[type=number], .input_inner input[type=num], .input_inner input[type=date] {
+        font-size: 16px;
+        height: 48px;
+        border: 1px solid #d9d9d9;
+        background-color: #ffffff;
+        border-radius: 6px;
+        width: 100%;
+        padding: 12px;
+        padding-right: 0px;
+        color: #000000 !important;
+    }
+
+
+.filebox .upload-name {
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width: 78%;
+    color: #999999;
+}
+.filebox label {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    vertical-align: middle;
+    background-color: #999999;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 10px;
+}
+
+button {
+    margin: 20px;
+    outline: none;
+}
+.btnSubmit {
+    width: 120px;
+    height: 60px;
+    background: #000;
+    color: #fff;
+    z-index: 1;
+    border-radius: 5px;
+    font-weight: 300;
+    text-align:center;
+}
+
+    .btnSubmit:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background: #e0e5ec;
+        transition: all 0.3s ease;
+    }
+
+    .btnSubmit:hover {
+        color: navajowhite;
+
+    }
+
+     
+
+    .btnSubmit:active {
+        top: 2px;
+    }

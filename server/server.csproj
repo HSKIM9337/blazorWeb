@@ -7,11 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\images\ic_clear.svg" />
+    <Content Remove="wwwroot\images\ic_star.svg" />
     <Content Remove="wwwroot\images\mainlogo.svg" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+    <PackageReference Include="Jering.Javascript.NodeJS" Version="6.3.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.9">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -25,6 +28,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="wwwroot\images\ic_clear.svg" />
+    <Resource Include="wwwroot\images\ic_star.svg" />
     <Resource Include="wwwroot\images\mainlogo.svg" />
   </ItemGroup>
 
