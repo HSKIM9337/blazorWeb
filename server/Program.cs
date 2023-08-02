@@ -13,6 +13,12 @@ namespace server
 {
 	public class Program
 	{
+		private IConfiguration _configuration { get; }
+
+		public Program(IConfiguration configuration)
+		{
+			_configuration = configuration;
+		}
         
         public static void Main(string[] args)
 		{
@@ -22,11 +28,13 @@ namespace server
 			builder.Services.AddRazorPages();
 			builder.Services.AddServerSideBlazor();
 			builder.Services.AddSingleton<WeatherForecastService>();
-			builder.Services.AddSingleton<IDBHelper, DBHelper>();
+			//builder.Services.AddSingleton<IDBHelper, DBHelper>();
+			builder.Services.AddDbContext<ApplicationDbContext>(options =>
+			   options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 			var app = builder.Build();
 
-			InitializeDatabase(app);
+			//InitializeDatabase(app);
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
@@ -46,19 +54,21 @@ namespace server
 			app.MapFallbackToPage("/_Host");
 
 			app.Run();
-		}
 
-        private static async Task InitializeDatabase(WebApplication app)
-        {
-            // 데이터베이스 초기화를 위해 필요한 서비스 가져오기
-            using (var scope = app.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
-                var dbHelper = services.GetRequiredService<IDBHelper>();
-                await dbHelper.InitializeAsync(); // 데이터베이스 초기화 비동기 메서드 호출
+		}
+		//private static async Task InitializeDatabase(WebApplication app)
+  //      {
+  //          // 데이터베이스 초기화를 위해 필요한 서비스 가져오기
+  //          using (var scope = app.Services.CreateScope())
+  //          {
+  //              var services = scope.ServiceProvider;
+  //              var dbHelper = services.GetRequiredService<IDBHelper>();
+  //              await dbHelper.InitializeAsync(); // 데이터베이스 초기화 비동기 메서드 호출
 				
-			}
-        }
+		//	}
+  //      }
+
+
 
 		
 

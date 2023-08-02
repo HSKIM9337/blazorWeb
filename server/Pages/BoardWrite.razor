@@ -1,7 +1,6 @@
 ﻿@page "/boardwrite"
 @using server.DB;
 @using server.DB.Model;
-@inject IDBHelper _dbHelper
 
 
 <div class="wrap-container">
@@ -54,7 +53,7 @@
 							제목
 						</label>
 						<div class="input_inner" style="position:relative;">
-							<input type="text" id="input_ID1" placeholder="입력해주세요" @bind="InputTitleValue" />
+							<input type="text" id="input_ID1" placeholder="입력해주세요" @bind="@newPost.Title" />
 							<button type="button" @onclick="ClearInput" class="input_clear" title="초기화" style="@ClearButtonStyle;">
 								<img src="/images/ic_clear.svg" style="height:10px; width:10px;" />
 							</button>
@@ -70,7 +69,7 @@
 						<div class="inquiry-input-area" style="position:relative;">
 								<div class="textarea">
 									<form id="registForm">
-										<textarea name="contents" id="inContents" cols="30" rows="10" placeholder="내용을 입력해주세요" maxlength="2000"> </textarea>
+										<textarea name="contents" @bind="@newPost.Content" id="inContents" cols="30" rows="10" placeholder="내용을 입력해주세요" maxlength="2000"> </textarea>
 									</form>
 									<p class="textarea-length">0</p>
 									" / 1,000byte"
@@ -98,7 +97,7 @@
 
 			</div>
 			<div class="butn-wra" style="display:flex; align-items:center; justify-content:center; min-height:80px;">
-				<button type="button" class="btnSubmit">글쓰기</button>
+				<button type="button" class="btnSubmit" @onclick="CreatePost">글쓰기</button>
 			</div>
 		</div>
 	</div> <!-- /container -->
@@ -106,8 +105,5 @@
 @code {
 
 
-	public void InsertDB()
-	{
-		this._dbHelper.insertIntoBoardTable(DateTime.Now, BoardInfo.Title, BoardInfo.Contents, BoardInfo.Email);
-	}
+	
 }
